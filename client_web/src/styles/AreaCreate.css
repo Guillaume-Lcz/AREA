@@ -1,0 +1,104 @@
+.area-create-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.if-condition {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #663399;
+    color: #fff;
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.if-condition:not(:empty) {
+    background-color: #4b0082;
+}
+
+.button-plus {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    margin-left: 15px
+}
+
+.button-plus:hover {
+    background-color: #222;
+}
+
+.then-condition {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.button {
+    background-color: #663399;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #4b0082;
+}
+
+.added-blocks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.block {
+    width: 200px;
+    height: auto;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    position: relative;
+}
+
+.delete-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.back-button {
+    background-color: #662e9b;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10%;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    transition: background-color 0.3s;
+  }
+  
+  .back-button:hover {
+    background-color: #7115c7;
+  }
+  

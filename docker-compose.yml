@@ -1,0 +1,105 @@
+version: '3.8'
+
+
+services:
+
+  mongodb:
+      image: mongo
+      ports:
+        - '${MONGOPORT}:${MONGOPORT}'
+      environment:
+        MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME}
+        MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
+        MONGO_INITDB_DATABASE: ${MONGO_DATABASE}
+      volumes:
+        - db:/data/db
+      networks:
+        - back-net
+      restart: always
+
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    depends_on:
+      - mongodb
+    ports:
+      - '${SERVERPORT}:${SERVERPORT}'
+    environment:
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
+      GOOGLE_CLIENTSECRET: ${GOOGLE_CLIENT_SECRET}
+      REDIRECT_GOOGLE_SERVICE: ${REDIRECT_GOOGLE_SERVICE}
+      REDIRECT_GOOGLE_SERVICE_MOBILE: ${REDIRECT_GOOGLE_SERVICE_MOBILE}
+      REDIRECT_GOOGLE_WEB_URL: ${REDIRECT_GOOGLE_WEB_URL}
+      REDIRECT_GOOGLE_MOBILE_URL: ${REDIRECT_GOOGLE_MOBILE_URL}
+      DISCORD_CLIENT_ID: ${DISCORD_CLIENT_ID}
+      DISCORD_CLIENT_SECRET: ${DISCORD_CLIENT_SECRET}
+      DISCORD_BOT: ${DISCORD_BOT}
+      REDIRECT_DISCORD_URL: ${REDIRECT_DISCORD_URL}
+      REDIRECT_DISCORD_MOBILE: ${REDIRECT_DISCORD_MOBILE}
+      SPOTIFY_CLIENT_ID: ${SPOTIFY_CLIENT_ID}
+      SPOTIFY_SECRET_ID: ${SPOTIFY_SECRET_ID}
+      REDIRECT_SPOTIFY_URL: ${REDIRECT_SPOTIFY_URL}
+      REDIRECT_SPOTIFY_MOBILE_URL: ${REDIRECT_SPOTIFY_MOBILE}
+      TOKEN_SECRET: ${TOKEN_SECRET}
+      MOBILE_APP: ${MOBILE_APP}
+      CLIENT_URL: ${CLIENT_URL}
+      PORT: ${SERVERPORT}
+      ATLAS_URI: mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@mongodb:${MONGOPORT}/${MONGO_DATABASE}?authSource=admin
+    networks:
+      - back-net
+      - front-net
+    restart: unless-stopped
+
+  client_mobile:
+    build:
+      context: ./client_mobile
+      dockerfile: Dockerfile
+    user: root
+    volumes:
+      - client:/var/client
+      - apk_volume:/var/apk
+    restart: unless-stopped
+
+  client_web:
+    build:
+      context: ./client_web
+      dockerfile: Dockerfile
+    depends_on:
+      - server
+      - client_mobile
+    volumes:
+      - client:/var/client
+      - apk_volume:/var/www/html
+    networks:
+      - front-net
+    restart: unless-stopped
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - '${CLIENTPORT}:${CLIENTPORT}'
+    volumes:
+      - type: bind
+        source: ./nginx.conf
+        target: /etc/nginx/nginx.conf
+      - apk_volume:/var/www/html
+    depends_on:
+    - client_web
+    networks:
+    - front-net
+    restart: unless-stopped
+
+
+
+volumes:
+  db:
+  client:
+  apk_volume:
+
+
+networks:
+  back-net:
+    driver: bridge
+  front-net:
+    driver: bridge

@@ -1,0 +1,164 @@
+{
+    "client": {
+        "host": ""
+    },
+    "server": {
+        "current_time": "",
+        "services": [
+            {
+                "name": "discord",
+                "actions": [
+                    {
+                        "name": "new_private_message_received",
+                        "description": "A new message is received by the user"
+                    },
+                    {
+                        "name": "new_server_joined",
+                        "description": "The user joined a new server"
+                    }
+                ],
+                "reactions": [
+                    {
+                        "name": "send_private_message",
+                        "description": "The user can send a private message"
+                    },
+                    {
+                        "name": "send_channel_message",
+                        "description": "The user can send a message in a channel"
+                    },
+                    {
+                        "name": "react_to_message",
+                        "description": "The user can react to a message"
+                    }
+                ]
+            },
+            {
+                "name": "spotify",
+                "actions": [
+                    {
+                        "name": "new_playlist_created",
+                        "description": "The user just created a new playlist"
+                    },
+                    {
+                        "name": "new_song_liked",
+                        "description": "The user just liked a new song"
+                    },
+                    {
+                        "name": "new_album_added",
+                        "description": "The user just added a new album"
+                    }
+                ],
+                "reactions": [
+                    {
+                        "name": "placeholder_reaction",
+                        "description": "Placeholder reaction for Spotify"
+                    }
+                ]
+            },
+            {
+                "name": "timer",
+                "actions": [
+                    {
+                        "name": "each_x_time",
+                        "description": "Execute an action each x time"
+                    }
+                ],
+                "reactions": [
+                    {
+                        "name": "deadline",
+                        "description": "In X days it will be Y (ex: In 3 days, it will be Friday)."
+                    }
+                ]
+            },
+            {
+                "name": "gmail",
+                "actions": [
+                    {
+                        "name": "new_email_received",
+                        "description": "A new email is received by the user"
+                    },
+                    {
+                        "name": "email_sent",
+                        "description": "The user just sent an email"
+                    }
+                ],
+                "reactions": [
+                    {
+                        "name": "send_email",
+                        "description": "The user can send an email"
+                    }
+                ]
+            },
+            {
+                "name": "jokes",
+                "actions": [
+                    {
+                        "name": "send_random_joke",
+                        "description": "Send a random joke"
+                    }
+                ],
+                "reactions": [
+                    {
+                        "name": "send_random_joke",
+                        "description": "Send a random joke"
+                    }
+                ]
+            },
+            {
+                "name": "met_museum",
+                "actions": [
+                    {
+                        "name": "send_random_artwork_met_museum",
+                        "description": "Send a random artwork from the Met Museum"
+                    }
+                ],
+                "reactions": [
+                    {
+                        "name": "send_random_artwork_met_museum",
+                        "description": "Send a random artwork from the Met Museum"
+                    }
+                ]
+            },
+            {
+                "name": "chicago_museum",
+                "actions": [
+                    {
+                        "name": "send_random_artwork_chicago_museum",
+                        "description": "Send a random artwork from the Chicago Art Institute"
+                    }
+                ],
+                "reactions": [
+                    {
+                        "name": "send_random_artwork_chicago_museum",
+                        "description": "Send a random artwork from the Chicago Art Institute"
+                    }
+                ]
+            },
+            {
+                "name": "drive",
+                "actions": [
+                    {
+                        "name": "new_file_uploaded",
+                        "description": "A new file is uploaded"
+                    }
+                ],
+                "reactions": [
+                    {
+                        "name": "upload_file",
+                        "description": "Upload a file on Drive"
+                    }
+                ]
+            },
+            {
+                "name": "calendar",
+                "actions": [
+                    {
+                        "name": "fetch_next_event",
+                        "description": "Fetch the next event from the calendar"
+                    }
+                ],
+                "reactions": []
+            }
+        ]
+    }
+}

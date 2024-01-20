@@ -1,0 +1,44 @@
+.information-input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.input-section {
+    background-color: #333;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.info-logo {
+    width: 130px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.custom-title {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.custom-description {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.custom-input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    color: #000;
+    background-color: #f0f0f0;
+}
+

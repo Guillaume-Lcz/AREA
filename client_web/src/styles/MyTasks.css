@@ -1,0 +1,73 @@
+.task-list {
+    background-color: #333;
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    margin: 30px;
+  }
+  
+  .task-header {
+    background-color: #662e9b;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    user-select: none;
+  }
+  
+  .task-header:hover {
+    background-color: #4d2175; /* Changement de couleur au survol du header */
+  }
+  
+  .task-item {
+    padding: 15px;
+    border-bottom: 1px solid #004080;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .task-item > div {
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+  }
+  
+  .task-item:hover {
+    background-color: #002b49; /* Changement de couleur au survol d'une tâche */
+  }
+  
+  .task-item:last-child {
+    border-bottom: none;
+  }
+  
+  .action {
+    color: #3498db;
+  }
+  
+  .reaction {
+    color: #2ecc71;
+  }
+  
+  .delete-button,
+  .edit-button {
+    background-color: #662e9b;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .delete-button:hover,
+  .edit-button:hover {
+    background-color: #4d2175;
+  }
+

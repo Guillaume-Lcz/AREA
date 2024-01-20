@@ -1,0 +1,30 @@
+.service-page-container {
+    position: relative;
+    text-align: center;
+}
+
+.logo-service {
+    width: 200px;
+    height: auto;
+    position: fixed;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.connect-button,
+.action-reaction-button {
+    display: block;
+    margin: 10px auto; 
+    padding: 8px 16px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #662e9b;
+    transition: background-color 0.3s ease;
+}
+
+.action-reaction-button:hover {
+    background-color: #7115c7;
+}

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "123781765726",
+    "project_id": "area-auth-be31d",
+    "storage_bucket": "area-auth-be31d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:123781765726:android:f1154f45bc64da7b82b2cf",
+        "android_client_info": {
+          "package_name": "com.example.area_test"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "Your Current Key"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

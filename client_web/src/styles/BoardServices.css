@@ -1,0 +1,41 @@
+  
+  .services-board {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .service-block {
+    width: 200px;
+    height: 150px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    user-select: none;
+  }
+  
+  .service-block:hover {
+    background-color: #e0e0e0;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+  }
+  
+  .service-block img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .service-name {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold; /* Make the text bold */
+  }
+  
